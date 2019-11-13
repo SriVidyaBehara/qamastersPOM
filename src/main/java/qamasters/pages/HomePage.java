@@ -1,4 +1,4 @@
 package qamasters.pages;
 
-public class HomePage {
+public class HomePage extends BasePage{
 }
