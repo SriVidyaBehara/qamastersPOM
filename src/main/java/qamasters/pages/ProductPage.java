@@ -19,6 +19,10 @@ public class ProductPage extends BasePage {
     public WebElement addToCartButton;
     @FindBy(css=".layer_cart_product")
     public WebElement cartPopUp;
+
+    @FindBy(css="#quantity_plus")
+    public WebElement increaseQuantity;
+
     public ProductPage(){
         PageFactory.initElements(driver,this);
 
@@ -41,5 +45,9 @@ public class ProductPage extends BasePage {
     }
     public void itemSuccessfullyAddedToCart(){
         Assert.assertTrue(cartPopUp.isDisplayed());
+    }
+
+    public void increaseQuantity() {
+        increaseQuantity.click();
     }
 }
