@@ -1,5 +1,6 @@
 package qamasters.com;
 
+import org.junit.Assert;
 import org.junit.Test;
 import qamasters.pages.ProductPage;
 import qamasters.pages.IsUserOnHeaderPage;
@@ -34,4 +35,14 @@ public class SmokeTestSuite extends BaseTest {
 
     }
 
+    @Test
+    public void verifyUserCanIncreaseItemQuantity() {
+        signinpage.signinAs(userName,userPassword);
+        yourLagaHeader.isUserOnHeaderPage();
+        searchanitem.searchAnItem("T-Shirts");
+        searchanitem.search();
+        productPage.clickfadedTshirt();
+        productPage.increaseQuantity();
+       // Assert.assertTrue(productPage.isQuantityIncreased());
+    }
 }

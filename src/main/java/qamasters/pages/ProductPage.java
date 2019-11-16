@@ -9,16 +9,25 @@ import qamasters.Utils;
 public class ProductPage extends BasePage {
     @FindBy(linkText="Faded Short Sleeve T-shirts")
     public WebElement fadedTshirt;
+
     @FindBy(css="#quantity_wanted")
     public WebElement quantityField;
+
     @FindBy(css="#group_1")
     public WebElement sizeList;
+
     @FindBy(name="Blue")
     public WebElement color;
+
     @FindBy(name="Submit")
     public WebElement addToCartButton;
+
     @FindBy(css=".layer_cart_product")
     public WebElement cartPopUp;
+
+    @FindBy(css=".icon-plus")
+    public WebElement increaseQuantity;
+
     public ProductPage(){
         PageFactory.initElements(driver,this);
 
@@ -41,5 +50,9 @@ public class ProductPage extends BasePage {
     }
     public void itemSuccessfullyAddedToCart(){
         Assert.assertTrue(cartPopUp.isDisplayed());
+    }
+
+    public void increaseQuantity() {
+        increaseQuantity.click();
     }
 }
