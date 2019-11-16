@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class IsUserOnHeaderPage extends BasePage {
     @FindBy(css="img[class='logo img-responsive']")
     public WebElement yourLagaHeaderField;
+
     public IsUserOnHeaderPage(){
         PageFactory.initElements(driver,this);
     }
